@@ -14,8 +14,8 @@
 
 void	ft_lstadd(t_list **alst, t_list *new)
 {
-    if (*alst == NULL)
-        *alst = new;
-    else
-        ft_lstadd(&((*alst)->next), new);
+  if (alst == NULL)
+		return ;
+	new->next = *alst;
+	*alst = new;
 }

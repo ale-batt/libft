@@ -12,21 +12,23 @@
 
 #include "../includes/libft.h"
 
-char	*ft_strnstr(const char *s1, const char *s2, size_t n)
+char		*ft_strnstr(const char *s1, const char *s2, size_t n)
 {
-    size_t	index1;
-    size_t	index2;
+	size_t	len;
+	size_t	len1;
+	size_t	tmp;
 
-    index1 = 0;
-    while (s1[index1] && n--)
+	len = ft_strlen(s2);
+	len1 = ft_strlen(s1);
+	tmp = 0;
+	if (!s2)
+		return (char*)(s1);
+	while (tmp + len <= n && tmp + len <= len1)
     {
-        index2 = 0;
-        while (s1[index1 + index2] &&
-               s2[index2] && s2[index2] == s1[index1 + index2])
-            index2++;
-        if (!s2[index2])
-            return (char*)(s1 + index1);
-        index1++;
+      if (!ft_strncmp(s1, s2, len))
+        return ((char*)s1);
+      s1++;
+      tmp++;
     }
-    return (NULL);
+	return (NULL);
 }

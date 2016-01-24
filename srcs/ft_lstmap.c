@@ -1,23 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstdelone.c                                     :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: world42 <world42@student.42.fr>            +#+  +:+       +#+        */
+/*   By: mmoustai <mmoustai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2013/12/01 22:34:54 by world42           #+#    #+#             */
-/*   Updated: 2014/02/22 12:29:28 by world42          ###   ########.fr       */
+/*   Created: 2013/11/30 21:26:47 by mmoustai          #+#    #+#             */
+/*   Updated: 2013/12/01 18:36:32 by mmoustai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include "../includes/libft.h"
 
-void       ft_lstdelone(t_list **alst, void (*del)(void *, size_t))
+t_list			*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
 {
-  if (alst == NULL)
-		return ;
-	(del)((*alst)->content, (*alst)->content_size);
-	free(*alst);
-	*alst = NULL;
+	t_list		*lst1;
+	t_list		*lst2;
+
+	lst2 = (t_list *)malloc(sizeof(t_list));
+	lst1 = lst2;
+	while (lst != NULL)
+	{
+		if ((lst1->next = f(lst)) == NULL)
+			return (NULL);
+		lst = lst->next;
+		lst1 = lst1->next;
+	}
+	return (lst2->next);
 }

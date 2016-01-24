@@ -11,17 +11,30 @@
 /* ************************************************************************** */
 
 #include "../includes/libft.h"
+#include <stdlib.h>
 
-char	*ft_strtrim(const char *s)
+char		*ft_strtrim(const char *str)
 {
-    int		i;
+	char	*ret;
+	int		i;
 
-    if (!s)
-        return (NULL);
-    while (ft_isspace(*s))
-        ++s;
-    i = ft_strlen(s) - 1;
-    while (ft_isspace(s[i]))
-        --i;
-    return (ft_strsub(s, 0, i + 1));
+	i = 0;
+	ret = (char *) malloc(sizeof(*ret) * (ft_strlen(str) + 1));
+	if (str)
+    {
+      while (*str == ' ' || *str == '\t' || *str == '\n')
+        str++;
+      while (*str != '\0')
+        {
+          ret[i] = *str++;
+          i++;
+        }
+      ret[i] = '\0';
+      while (ret[i - 1] == ' ' || ret[i - 1] == '\t' || ret[i - 1] == '\n')
+        {
+          ret[i - 1] = '\0';
+          i--;
+        }
+    }
+	return (ret);
 }
