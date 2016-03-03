@@ -14,5 +14,5 @@
 
 float		ft_frrand(float a, float b)
 {
-    return (ft_frand() * (b - a) + a);
+	return (ft_frand() * (b - a) + a);
 }

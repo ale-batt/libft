@@ -15,15 +15,15 @@
 
 t_list	*ft_lstinsert(t_list **lst, t_list *new, int (*cmpf)(void*, void*))
 {
-    if (*lst == NULL)
-        *lst = new;
-    else if (cmpf((*lst)->content, new->content) == 0)
-    {
-        (*lst)->content = new->content;
-        free(new);
-        return (*lst);
-    }
-    else
-        return (ft_lstinsert(&((*lst)->next), new, cmpf));
-    return (*lst);
+	if (*lst == NULL)
+		*lst = new;
+	else if (cmpf((*lst)->content, new->content) == 0)
+	{
+		(*lst)->content = new->content;
+		free(new);
+		return (*lst);
+	}
+	else
+		return (ft_lstinsert(&((*lst)->next), new, cmpf));
+	return (*lst);
 }

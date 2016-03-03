@@ -14,22 +14,22 @@
 
 char	*ft_strmap(const char *s, char (*f)(char))
 {
-    char	*str;
-    size_t	index;
+	char	*str;
+	size_t	index;
 
-    if (s && f)
-    {
-        str = ft_strnew(ft_strlen(s));
-        ft_strcpy(str, s);
-        if (str == NULL)
-            return (NULL);
-        index = 0;
-        while (str[index])
-        {
-            str[index] = (*f)(str[index]);
-            ++index;
-        }
-        return (str);
-    }
-    return (NULL);
+	if (s && f)
+	{
+		str = ft_strnew(ft_strlen(s));
+		ft_strcpy(str, s);
+		if (str == NULL)
+			return (NULL);
+		index = 0;
+		while (str[index])
+		{
+			str[index] = (*f)(str[index]);
+			++index;
+		}
+		return (str);
+	}
+	return (NULL);
 }

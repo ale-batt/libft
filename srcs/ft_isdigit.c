@@ -14,5 +14,5 @@
 
 int	ft_isdigit(int c)
 {
-    return (ISDIGIT(c));
+	return (ISDIGIT(c));
 }

@@ -14,7 +14,7 @@
 
 int		ft_tolower(int c)
 {
-    if (ISUPPER(c))
-        return (c + 32);
-    return (c);
+	if (ISUPPER(c))
+		return (c + 32);
+	return (c);
 }

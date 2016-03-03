@@ -24,11 +24,11 @@ char		*ft_strnstr(const char *s1, const char *s2, size_t n)
 	if (!s2)
 		return (char*)(s1);
 	while (tmp + len <= n && tmp + len <= len1)
-    {
-      if (!ft_strncmp(s1, s2, len))
-        return ((char*)s1);
-      s1++;
-      tmp++;
-    }
+	{
+		if (!ft_strncmp(s1, s2, len))
+			return ((char*)s1);
+		s1++;
+		tmp++;
+	}
 	return (NULL);
 }

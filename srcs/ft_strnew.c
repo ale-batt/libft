@@ -15,13 +15,13 @@
 
 char	*ft_strnew(size_t size)
 {
-    char	*str;
+	char	*str;
 
-    str = (char*)malloc(sizeof(char) * (size));
-    if (str)
-    {
-        ft_bzero(str, size);
-        return (str);
-    }
-    return (NULL);
+	str = (char*)malloc(sizeof(char) * (size));
+	if (str)
+	{
+		ft_bzero(str, size);
+		return (str);
+	}
+	return (NULL);
 }

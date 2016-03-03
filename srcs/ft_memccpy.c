@@ -20,18 +20,18 @@ void		*ft_memccpy(void *s1, const void *s2, int c, size_t n)
 	dest = (char *)s1;
 	src = (char *)s2;
 	if (n)
-    {
-      while (n != '\0')
-        {
-          *dest = *src;
-          dest++;
-          src++;
-          if (*(src - 1) == c)
-            {
-              return (dest);
-            }
-          n--;
-        }
-    }
+	{
+		while (n != '\0')
+		{
+			*dest = *src;
+			dest++;
+			src++;
+			if (*(src - 1) == c)
+			{
+				return (dest);
+			}
+			n--;
+		}
+	}
 	return (NULL);
 }

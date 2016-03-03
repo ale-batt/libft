@@ -14,10 +14,10 @@
 
 char	*ft_strgetnext(char ***str)
 {
-    if (*str && **str)
-    {
-        if (***str)
-            return (*((*str)++));
-    }
-    return (NULL);
+	if (*str && **str)
+	{
+		if (***str)
+			return (*((*str)++));
+	}
+	return (NULL);
 }

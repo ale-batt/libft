@@ -14,7 +14,7 @@
 
 int	ft_rrand(int start, int end)
 {
-    if (start < end)
-        return (start + (ft_rand() % (end - start)));
-    return (-1);
+	if (start < end)
+		return (start + (ft_rand() % (end - start)));
+	return (-1);
 }

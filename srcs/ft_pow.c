@@ -14,7 +14,7 @@
 
 double		ft_pow(double x, double y)
 {
-    if (!y)
-        return (1);
-    return (x * ft_pow(x, y - 1));
+	if (!y)
+		return (1);
+	return (x * ft_pow(x, y - 1));
 }

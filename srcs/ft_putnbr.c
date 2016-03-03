@@ -15,21 +15,21 @@
 
 void	ft_putnbr(int n)
 {
-    if (n == INT_MIN)
-    {
-        ft_putnbr(n / 10);
-        ft_putnbr(-(n % 10));
-    }
-    else if (n < 0 && n != INT_MIN)
-    {
-        ft_putchar('-');
-        ft_putnbr(-n);
-    }
-    else if (n >= 10)
-    {
-        ft_putnbr(n / 10);
-        ft_putnbr(n % 10);
-    }
-    else
-        ft_putchar(n + '0');
+	if (n == INT_MIN)
+	{
+		ft_putnbr(n / 10);
+		ft_putnbr(-(n % 10));
+	}
+	else if (n < 0 && n != INT_MIN)
+	{
+		ft_putchar('-');
+		ft_putnbr(-n);
+	}
+	else if (n >= 10)
+	{
+		ft_putnbr(n / 10);
+		ft_putnbr(n % 10);
+	}
+	else
+		ft_putchar(n + '0');
 }

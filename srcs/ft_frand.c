@@ -14,5 +14,5 @@
 
 float		ft_frand(void)
 {
-    return (ft_rand() / MAX_RAND);
+	return (ft_rand() / MAX_RAND);
 }

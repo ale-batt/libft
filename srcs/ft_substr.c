@@ -15,14 +15,14 @@
 
 char	*ft_substr(const char *src, size_t pos, size_t n)
 {
-    char	*dest;
+	char	*dest;
 
-    dest = NULL;
-    if (n > 0)
-    {
-        dest = (char*)malloc(sizeof(char*) * (n + 1));
-        if (dest)
-            ft_strncat(dest, src + pos, n);
-    }
-    return (dest);
+	dest = NULL;
+	if (n > 0)
+	{
+		dest = (char*)malloc(sizeof(char*) * (n + 1));
+		if (dest)
+			ft_strncat(dest, src + pos, n);
+	}
+	return (dest);
 }

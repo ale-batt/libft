@@ -15,17 +15,17 @@
 
 void	ft_tabdel(char ***tab)
 {
-    long	i;
+	long	i;
 
-    if (*tab && **tab)
-    {
-        i = 0;
-        while ((*tab)[i] != NULL)
-        {
-            free((*tab)[i]);
-            ++i;
-        }
-        free(*tab);
-        *tab = NULL;
-    }
+	if (*tab && **tab)
+	{
+		i = 0;
+		while ((*tab)[i] != NULL)
+		{
+			free((*tab)[i]);
+			++i;
+		}
+		free(*tab);
+		*tab = NULL;
+	}
 }

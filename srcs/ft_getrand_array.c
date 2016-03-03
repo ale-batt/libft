@@ -15,9 +15,9 @@
 
 int					*ft_getrand_array(void)
 {
-    static int		*array = NULL;
+	static int		*array = NULL;
 
-    if (!array)
-        array = (int*)malloc(sizeof(int) * (RAND_SIZE));
-    return (array);
+	if (!array)
+		array = (int*)malloc(sizeof(int) * (RAND_SIZE));
+	return (array);
 }

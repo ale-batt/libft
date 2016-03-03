@@ -14,18 +14,18 @@
 
 char	*ft_strncpy(char *s1, const char *s2, size_t n)
 {
-    size_t	tmp;
+	size_t	tmp;
 
-    tmp = 0;
-    while (tmp != n && s2[tmp])
-    {
-        s1[tmp] = s2[tmp];
-        tmp++;
-    }
-    while (tmp != n)
-    {
-        s1[tmp] = '\0';
-        tmp++;
-    }
-    return (s1);
+	tmp = 0;
+	while (tmp != n && s2[tmp])
+	{
+		s1[tmp] = s2[tmp];
+		tmp++;
+	}
+	while (tmp != n)
+	{
+		s1[tmp] = '\0';
+		tmp++;
+	}
+	return (s1);
 }

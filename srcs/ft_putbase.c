@@ -15,21 +15,21 @@
 
 void	ft_putbase(long l, int base, char *letters)
 {
-    if (l == LONG_MIN)
-    {
-        ft_putbase(l / base, base, letters);
-        ft_putbase(-(l % base), base, letters);
-    }
-    else if (l < 0 && l != LONG_MIN)
-    {
-        ft_putchar('-');
-        ft_putbase(-l, base, letters);
-    }
-    else if (l >= base)
-    {
-        ft_putbase(l / base, base, letters);
-        ft_putbase(l % base, base, letters);
-    }
-    else
-        ft_putchar(letters[l]);
+	if (l == LONG_MIN)
+	{
+		ft_putbase(l / base, base, letters);
+		ft_putbase(-(l % base), base, letters);
+	}
+	else if (l < 0 && l != LONG_MIN)
+	{
+		ft_putchar('-');
+		ft_putbase(-l, base, letters);
+	}
+	else if (l >= base)
+	{
+		ft_putbase(l / base, base, letters);
+		ft_putbase(l % base, base, letters);
+	}
+	else
+		ft_putchar(letters[l]);
 }

@@ -14,6 +14,6 @@
 
 void			ft_putpointer(void *p)
 {
-    ft_putstr("0x");
-    ft_puthex((unsigned long)p);
+	ft_putstr("0x");
+	ft_puthex((unsigned long)p);
 }

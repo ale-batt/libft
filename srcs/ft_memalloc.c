@@ -15,10 +15,10 @@
 
 void		*ft_memalloc(size_t size)
 {
-    void	*data;
+	void	*data;
 
-    data = malloc(size);
-    if (data)
-        return (data);
-    return (NULL);
+	data = malloc(size);
+	if (data)
+		return (data);
+	return (NULL);
 }

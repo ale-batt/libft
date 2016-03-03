@@ -15,21 +15,21 @@
 
 void	ft_putlong(long l)
 {
-    if (l == LONG_MIN)
-    {
-        ft_putnbr(l / 10);
-        ft_putnbr(-(l % 10));
-    }
-    else if (l < 0 && l != LONG_MIN)
-    {
-        ft_putchar('-');
-        ft_putnbr(-l);
-    }
-    else if (l >= 10)
-    {
-        ft_putnbr(l / 10);
-        ft_putnbr(l % 10);
-    }
-    else
-        ft_putchar(l + '0');
+	if (l == LONG_MIN)
+	{
+		ft_putnbr(l / 10);
+		ft_putnbr(-(l % 10));
+	}
+	else if (l < 0 && l != LONG_MIN)
+	{
+		ft_putchar('-');
+		ft_putnbr(-l);
+	}
+	else if (l >= 10)
+	{
+		ft_putnbr(l / 10);
+		ft_putnbr(l % 10);
+	}
+	else
+		ft_putchar(l + '0');
 }

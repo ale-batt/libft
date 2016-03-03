@@ -14,9 +14,9 @@
 
 char	*ft_strchr(const char *s, int c)
 {
-    if (*s == c)
-        return (char*)(s);
-    if (*s == '\0')
-        return (NULL);
-    return (ft_strchr(s + 1, c));
+	if (*s == c)
+		return (char*)(s);
+	if (*s == '\0')
+		return (NULL);
+	return (ft_strchr(s + 1, c));
 }

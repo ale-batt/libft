@@ -14,30 +14,30 @@
 
 static int		ft_nlen(const char *s)
 {
-    if (*s && (*s >= 48 && *s <= 57))
-        return (ft_nlen(s + 1) + 1);
-    return (0);
+	if (*s && (*s >= 48 && *s <= 57))
+		return (ft_nlen(s + 1) + 1);
+	return (0);
 }
 
 static int		ft_atoi_deux(const char *str)
 {
-    int			a;
+	int			a;
 
-    if (*str && (*str >= 48 && *str <= 57))
-    {
-        a = (*str - 48) * ft_pow(10, ft_nlen(str) - 1);
-        return (ft_atoi_deux(str + 1) + a);
-    }
-    return (0);
+	if (*str && (*str >= 48 && *str <= 57))
+	{
+		a = (*str - 48) * ft_pow(10, ft_nlen(str) - 1);
+		return (ft_atoi_deux(str + 1) + a);
+	}
+	return (0);
 }
 
 int				ft_atoi(const char *str)
 {
-    while (ft_isspace(*str))
-        str++;
-    if (*str == '-')
-        return (-1 * ft_atoi_deux(str + 1));
-    if (*str == '+')
-        return (ft_atoi_deux(str + 1));
-    return (ft_atoi_deux(str));
+	while (ft_isspace(*str))
+		str++;
+	if (*str == '-')
+		return (-1 * ft_atoi_deux(str + 1));
+	if (*str == '+')
+		return (ft_atoi_deux(str + 1));
+	return (ft_atoi_deux(str));
 }

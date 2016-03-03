@@ -14,5 +14,5 @@
 
 int	ft_isalpha(int c)
 {
-    return (ISALPHA(c));
+	return (ISALPHA(c));
 }

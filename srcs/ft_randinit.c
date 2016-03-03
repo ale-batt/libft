@@ -14,21 +14,21 @@
 
 int		ft_randinit(int seed)
 {
-    int	*array;
-    int	i;
+	int	*array;
+	int	i;
 
-    if ((array = ft_getrand_array()) != NULL)
-    {
-        array[0] = seed;
-        i = 1;
-        while (i < RAND_SIZE)
-        {
-            array[i] = 1812433253
-                * (array[i - 1] ^ (array[i - 1] >> 30))
-                + i;
-            ++i;
-        }
-        return (1);
-    }
-    return (0);
+	if ((array = ft_getrand_array()) != NULL)
+	{
+		array[0] = seed;
+		i = 1;
+		while (i < RAND_SIZE)
+		{
+			array[i] = 1812433253
+				* (array[i - 1] ^ (array[i - 1] >> 30))
+				+ i;
+			++i;
+		}
+		return (1);
+	}
+	return (0);
 }
