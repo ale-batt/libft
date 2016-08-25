@@ -1,4 +1,4 @@
-#******************************************************************************#
+# **************************************************************************** #
 #                                                                              #
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
@@ -6,56 +6,19 @@
 #    By: world42 <world42@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2013/11/19 13:57:53 by world42           #+#    #+#              #
-#    Updated: 2014/07/01 01:36:50 by world42          ###   ########.fr        #
+#*   Updated: 2016/08/25 14:17:14 by ale-batt         ###   ########.fr       *#
 #                                                                              #
-#******************************************************************************#
+# **************************************************************************** #
 
 NNAME = ft
+
 INCLUDE = ./includes
-SRCPATH = ./srcs/
+SOURCES = ./sources
+OBJECT  = ./.objs
+
 TAGS = etags --declarations
 CFLAGS = -Wall -Werror -Wextra -ansi -pedantic
 C = \033[1;34m
-SRCS = \
-	ft_strnlen.c ft_strnew.c ft_strdel.c ft_striter.c \
-	ft_striteri.c ft_strmap.c ft_strmapi.c ft_strclr.c \
-	ft_strdup.c ft_strcat.c ft_strncat.c ft_strlcat.c \
-	ft_strjoin.c ft_strcpy.c ft_strncpy.c ft_strcmp.c \
-	ft_strequ.c ft_strnequ.c ft_strncmp.c ft_strstr.c \
-	ft_strnstr.c ft_strsub.c ft_strtrim.c ft_substr.c \
-	ft_strchr.c ft_strrchr.c ft_strsplit.c ft_strlen.c \
-	ft_strjoin_char.c ft_strgetnext.c \
-\
-	ft_tabdel.c ft_tabjoin.c ft_tablen.c \
-\
-	ft_matchn.c ft_match.c ft_matchlen.c ft_matchsplit.c \
-	ft_matchpop.c \
-\
-	get_next_line.c \
-\
-	ft_isort.c \
-\
-	ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c \
-	ft_isprint.c \
-\
-	ft_putstr.c ft_putchar.c ft_putnbr.c ft_putendl.c \
-	ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c \
-	ft_putnbr_fd.c ft_tolower.c ft_toupper.c ft_puthex.c \
-	ft_puthex_64.c ft_putpointer.c ft_putbase.c \
-\
-	ft_numlen.c ft_pow.c ft_atoi.c ft_abs.c \
-	ft_absl.c ft_sqrt.c ft_isspace.c ft_atoi.c ft_itoa.c \
-\
-	ft_randinit.c ft_rand.c ft_getrand_array.c ft_rrand.c \
-	ft_frrand.c ft_frand.c \
-\
-	ft_memchr.c ft_memcmp.c ft_memcpy.c ft_memccpy.c \
-	ft_memset.c ft_bzero.c ft_memmove.c ft_memalloc.c \
-	ft_memdel.c \
-\
-	ft_lstnew.c ft_lstdel.c ft_lstdelone.c ft_lstiter.c \
-	ft_lstadd.c ft_lstcmp.c ft_lstdelcmp.c ft_lstinsert.c \
-	ft_lstsize.c ft_lst.c \
 
 # make [[OPT]] [[MODE]=1] ...]
 # ex: make re V=1
@@ -89,35 +52,51 @@ CLNAME = l$(NNAME)
 CC = $(SILENCE)gcc
 LIB = $(SILENCE)ar rc
 RM = $(SILENCE)rm -rf
-SRC = $(addprefix $(SRCPATH), $(SRCS))
-OBJS= $(SRC:.c=.o)
+
+FILES = $(shell find $(SOURCES) -type f -follow | sed "s/.\/[^\/]*//")
+
+OF=$(FILES:%.c=%.o)
+O_FILES = $(addprefix $(OBJECT), $(OF))
+C_FILES = $(addprefix $(SOURCES), $(FILES))
+
+DIRS = $(shell find $(SOURCES) -type d -follow -print | sed "s/.\/[^\/]*//" | cut -d'/' -f2)
+O_DIRS= $(addprefix $(OBJECT)/, $(DIRS))
+
+SRCS = $(shell find $(SOURCES) -type f -follow -exec basename {} \;)
+
+H_FILES = $(shell find $(INCLUDE) -type f -follow -print | grep ".*\.h$$")
 
 W := o
-BART := $(shell echo '$(OBJS)'|wc -w|tr -d ' ')
+BART := $(shell echo '$(O_FILES)'|wc -w|tr -d ' ')
 BARC = $(words $W)$(eval W := o $W)
 BAR = $(shell printf "%`expr $(BARC) '*' 100 / $(BART)`s" | tr ' ' '=')
 
 U = $(C)[$(NAME)]----->\033[0m
 
-all: $(NORC) $(NAME) $(STAT) $(TAG)
+.PHONY: all clean fclean re tag norme
 
-$(NAME):$(OBJS)
+all: $(O_DIRS) $(NORC) $(NAME) $(STAT) $(TAG)
+
+$(O_DIRS):
+	@mkdir -p  $(OBJECT) $(O_DIRS)
+
+$(NAME): $(O_FILES) # $(H_FILES)
 	@echo "$(U)$(C)[COMPILE:\033[1;32m DONE$(C)]"
 	@echo "$(U)$(C)[BUILD LIB]\033[0;32m"
-	$(LIB) $(NAME) $(OBJS)
+	$(LIB) $(NAME) $(O_FILES)
 	@ranlib $(NAME)
 	@echo "$(SKIP)$(U)$(C)[BUILD  :\033[1;32m DONE$(C)]\033[0m\033[K"
 
-.c.o:
+$(OBJECT)/%.o: $(SOURCES)/%.c
 	@echo "$(U)$(C)[COMPILE: \033[1;31m$<\033[A\033[0m"
 	@echo "\033[0;32m"
-	$(CC) -o $@ $(DEBUG) $(CFLAGS) -I $(INCLUDE) -c $<
+	$(CC) $(DEBUG) $(CFLAGS) -o $@ -c $< -I$(INCLUDE) 
 	@printf "\033[1;31m[%-100s] %s%%\n" $(BAR) `echo $W|wc -w|tr -d ' '`
 	@echo "$(SKIP)\033[A\033[2K$(SKIP)"
 
 clean:
 	@echo "$(U)$(C)[CLEAN]\033[0;32m"
-	$(RM) $(OBJS)
+	$(RM) $(OBJECT)
 	@echo "$(SKIP)$(U)$(C)[CLEAN:\033[1;32m   DONE$(C)]\033[0m"
 
 fclean: clean
@@ -125,11 +104,12 @@ fclean: clean
 	$(RM) $(NAME)
 	@echo "$(SKIP)$(U)$(C)[F-CLEAN:\033[1;32m DONE$(C)]\033[0m"
 
-tag:
-	@echo "$(U)$(C)[TAGING]\033[0;32m"
-	$(SILENCE)$(TAGS) $(SRC)
-	@echo "$(SKIP)$(U)$(C)[TAGING:\033[1;32m DONE$(C)]\033[0m"
-
 re: fclean all
 
-.PHONY: clean fclean
+tag:
+	@echo "$(U)$(C)[TAGING]\033[0;32m"
+	$(SILENCE)$(TAGS) $(C_FILES)
+	@echo "$(SKIP)$(U)$(C)[TAGING:\033[1;32m DONE$(C)]\033[0m"
+
+norme:
+	norminette $(C_FILES) $(H_FILES)
