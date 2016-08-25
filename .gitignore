@@ -1,2 +1,2 @@
-/libft.a
-*.o
+./libft.a
+.objs
