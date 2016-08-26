@@ -1,34 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   rand.h                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: world42 <world42@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2013/12/29 22:42:32 by world42           #+#    #+#             */
-/*   Updated: 2016/08/26 14:49:33 by ale-batt         ###   ########.fr       */
+/*   Created: 2016/08/26 13:59:20 by world42           #+#    #+#             */
+/*   Updated: 2016/08/26 14:48:58 by ale-batt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#ifndef RAND_H
+# define RAND_H
 
-# include <unistd.h>
-# include <string.h>
-# include <stdlib.h>
-# include <stdio.h>
-# include <stdint.h>
+# define RAND_SIZE 			624
+# define RAND_A 			397
+# define MAX_RAND 			5
 
-# include "array.h"
-# include "convert.h"
-# include "ctype.h"
-# include "list.h"
-# include "match.h"
-# include "maths.h"
-# include "memory.h"
-# include "numbers.h"
-# include "puts.h"
-# include "rand.h"
-# include "string.h"
+float	ft_frand(void);
+float	ft_frrand(float a, float b);
+int		*ft_getrand_array(void);
+int		ft_rand(void);
+int		ft_randinit(int seed);
+int		ft_randint(int start, int end);
+int		ft_rrand(int start, int end);
 
 #endif

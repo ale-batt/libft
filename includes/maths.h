@@ -1,34 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   maths.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: world42 <world42@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2013/12/29 22:42:32 by world42           #+#    #+#             */
-/*   Updated: 2016/08/26 14:49:33 by ale-batt         ###   ########.fr       */
+/*   Created: 2016/08/26 13:58:54 by world42           #+#    #+#             */
+/*   Updated: 2016/08/26 14:48:27 by ale-batt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#ifndef MATHS_H
+# define MATHS_H
 
-# include <unistd.h>
-# include <string.h>
-# include <stdlib.h>
-# include <stdio.h>
-# include <stdint.h>
+# define HEX 		"0123456789abcdef"
+# define OCT 		"012345678"
+# define EPSILON 	0.000001
 
-# include "array.h"
-# include "convert.h"
-# include "ctype.h"
-# include "list.h"
-# include "match.h"
-# include "maths.h"
-# include "memory.h"
-# include "numbers.h"
-# include "puts.h"
-# include "rand.h"
-# include "string.h"
+double		ft_pow(double x, double y);
+int			ft_abs(int i);
+double		ft_absl(double i);
+double		ft_sqrt(double x);
 
 #endif
