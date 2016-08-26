@@ -6,11 +6,10 @@
 /*   By: world42 <world42@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/02/21 15:36:10 by world42           #+#    #+#             */
-/*   Updated: 2014/02/21 17:47:21 by world42          ###   ########.fr       */
+/*   Updated: 2016/08/26 14:39:40 by ale-batt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "libft.h"
 
 t_list		*ft_lst(void *content, size_t content_size)
