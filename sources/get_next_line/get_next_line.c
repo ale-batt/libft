@@ -6,18 +6,13 @@
 /*   By: world42 <world42@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/02/11 19:16:35 by world42           #+#    #+#             */
-/*   Updated: 2014/04/27 03:48:15 by world42          ###   ########.fr       */
+/*   Updated: 2016/08/26 14:43:57 by ale-batt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <sys/types.h>
-#include <sys/uio.h>
-#include <unistd.h>
-#include <stdlib.h>
-#include <fcntl.h>
-#include "libft.h"
+#include "get_next_line.h"
 
-int				ft_push(int const fd, char **buf, char **line)
+int		ft_push(int const fd, char **buf, char **line)
 {
 	int			i;
 	char		*split;
@@ -35,7 +30,7 @@ int				ft_push(int const fd, char **buf, char **line)
 	return (1);
 }
 
-int				ft_read(int const fd, char **buf, char **line)
+int		ft_read(int const fd, char **buf, char **line)
 {
 	char		*old;
 	ssize_t		ret;
