@@ -1,22 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd.c                                        :+:      :+:    :+:   */
+/*   ft_llstlen.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: world42 <world42@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2013/12/01 22:43:59 by world42           #+#    #+#             */
-/*   Updated: 2016/08/30 13:34:57 by ale-batt         ###   ########.fr       */
+/*   Created: 2013/12/01 21:01:28 by world42           #+#    #+#             */
+/*   Updated: 2016/08/30 13:53:49 by ale-batt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstadd(t_list **alst, t_list *new)
+int		ft_llstlen(t_llist *lst)
 {
-	if (alst && new)
+	t_llist	*tmp;
+	int		len;
+
+	tmp = lst;
+	len = 0;
+	while (tmp)
 	{
-		new->next = *alst;
-		*alst = new;
+		len++;
+		tmp = tmp->next;
 	}
+	return (len);
 }

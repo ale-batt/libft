@@ -1,22 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd.c                                        :+:      :+:    :+:   */
+/*   ft_lstfree.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: world42 <world42@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2013/12/01 22:43:59 by world42           #+#    #+#             */
-/*   Updated: 2016/08/30 13:34:57 by ale-batt         ###   ########.fr       */
+/*   Created: 2013/12/28 05:15:55 by world42           #+#    #+#             */
+/*   Updated: 2016/08/30 13:52:37 by ale-batt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstadd(t_list **alst, t_list *new)
+void	ft_lstfree(t_list *lst)
 {
-	if (alst && new)
+	t_list	*tmp;
+
+	tmp = lst;
+	while (tmp)
 	{
-		new->next = *alst;
-		*alst = new;
+		lst = tmp;
+		tmp = tmp->next;
+		free(lst->content);
+		free(lst);
 	}
 }

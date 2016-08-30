@@ -6,7 +6,7 @@
 /*   By: world42 <world42@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/08/26 13:58:37 by world42           #+#    #+#             */
-/*   Updated: 2016/08/26 14:40:40 by ale-batt         ###   ########.fr       */
+/*   Updated: 2016/08/30 13:55:49 by ale-batt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,11 @@ typedef struct		s_list
 
 t_list		*ft_lst(void *content, size_t content_size);
 void		ft_lstadd(t_list **alst, t_list *new);
+void		ft_lstadd_end(t_list **alst, t_list *new);
 void		ft_lstdel(t_list **alst, void (*del)(void*, size_t));
 void		*ft_lstcmp(t_list *lst, void *content, int (*cmpf)(void*, void*));
 void		ft_lstdelone(t_list **alst, void (*del)(void*, size_t));
+void		ft_lstfree(t_list *lst);
 t_list		*ft_lstinsert(t_list **lst, t_list *new, int (*cmpf)(void*, void*));
 void		ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 t_list		*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
