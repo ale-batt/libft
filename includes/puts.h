@@ -6,25 +6,25 @@
 /*   By: world42 <world42@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/08/26 13:59:30 by world42           #+#    #+#             */
-/*   Updated: 2016/08/30 14:28:11 by ale-batt         ###   ########.fr       */
+/*   Updated: 2016/08/30 14:32:32 by ale-batt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUTS_H
 # define PUTS_H
 
-#define DEFAULT   "\033[0m";
-#define HIGHLIGHT "\033[1m";
-#define UNDERLINE "\033[4m";
-#define BLINK     "\033[5m";
-#define BLACK     "\033[30m";
-#define RED       "\033[31m";
-#define GREEN     "\033[32m";
-#define YELLOW    "\033[33m";
-#define BLUE      "\033[34m";
-#define PURPLE    "\033[35m";
-#define CYAN      "\033[36m";
-#define WHITE     "\033[37m";
+#define DEFAULT   "\033[0m"
+#define HIGHLIGHT "\033[1m"
+#define UNDERLINE "\033[4m"
+#define BLINK     "\033[5m"
+#define BLACK     "\033[30m"
+#define RED       "\033[31m"
+#define GREEN     "\033[32m"
+#define YELLOW    "\033[33m"
+#define BLUE      "\033[34m"
+#define PURPLE    "\033[35m"
+#define CYAN      "\033[36m"
+#define WHITE     "\033[37m"
 
 void	ft_putbase(long l, int base, char *letters);
 void	ft_putchar_fd(char c, int fd);
