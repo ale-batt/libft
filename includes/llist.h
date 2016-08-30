@@ -6,12 +6,12 @@
 /*   By: world42 <world42@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/08/26 13:58:37 by world42           #+#    #+#             */
-/*   Updated: 2016/08/30 13:54:54 by ale-batt         ###   ########.fr       */
+/*   Updated: 2016/08/30 14:01:16 by ale-batt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIST_H
-# define LIST_H
+#ifndef LLIST_H
+# define LLIST_H
 
 typedef struct		s_llist
 {
