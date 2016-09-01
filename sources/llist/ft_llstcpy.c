@@ -1,22 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd.c                                        :+:      :+:    :+:   */
+/*   ft_llstcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: world42 <world42@student.42.fr>            +#+  +:+       +#+        */
+/*   By: ale-batt <ale-batt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2013/12/01 22:43:59 by world42           #+#    #+#             */
-/*   Updated: 2016/08/30 13:34:57 by ale-batt         ###   ########.fr       */
+/*   Created: 2016/01/15 10:38:26 by ale-batt          #+#    #+#             */
+/*   Updated: 2016/08/30 13:50:51 by ale-batt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstadd(t_list **alst, t_list *new)
+t_llist	*ft_llstcpy(t_llist *list)
 {
-	if (alst && new)
+	t_llist	*new;
+	t_llist	*tmp;
+
+	new = NULL;
+	tmp = list;
+	while (tmp)
 	{
-		new->next = *alst;
-		*alst = new;
+		ft_llstadd_end(&new, ft_llstnew(tmp->content));
+		tmp = tmp->next;
 	}
+	return (new);
 }
