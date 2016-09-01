@@ -1,21 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   array.h                                            :+:      :+:    :+:   */
+/*   ft_freetab.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: world42  <ale-batt@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ale-batt <ale-batt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/08/26 13:53:50 by world42           #+#    #+#             */
-/*   Updated: 2016/09/01 16:27:17 by ale-batt         ###   ########.fr       */
+/*   Created: 2015/09/13 18:22:11 by ale-batt          #+#    #+#             */
+/*   Updated: 2015/12/17 15:00:43 by ale-batt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ARRAY_H
-# define ARRAY_H
+#include <stdlib.h>
 
-char		*ft_tabjoin(char **tab);
-void		ft_tabdel(char ***tab);
-int			ft_tablen(char **tab);
-void		ft_freetab(char **tab);
+void	ft_freetab(char **tab)
+{
+	int y;
 
-#endif
+	y = 0;
+	while (tab[y])
+		free(tab[y++]);
+	free(tab);
+}
