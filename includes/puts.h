@@ -6,7 +6,7 @@
 /*   By: world42  <ale-batt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/08/26 13:59:30 by world42           #+#    #+#             */
-/*   Updated: 2016/08/26 14:15:04 by world42          ###   ########.fr       */
+/*   Updated: 2016/09/01 16:28:06 by ale-batt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,5 +27,6 @@ void	ft_putnbr_fd(int n, int fd);
 void	ft_putnbr(int n);
 void	ft_putstr_fd(const char *s, int fd);
 void	ft_putstr(const char *s);
+void	ft_putnull(char *s);
 
 #endif
