@@ -1,3 +1,5 @@
 libft.a
 TAGS
 .objs
+
+test/cmocka
