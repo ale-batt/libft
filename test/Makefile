@@ -6,7 +6,7 @@
 #*   By: ale-batt <ale-batt@student.42.fr>          +#+  +:+       +#+        *#
 #*                                                +#+#+#+#+#+   +#+           *#
 #*   Created: 2016/09/01 12:23:36 by ale-batt          #+#    #+#             *#
-#*   Updated: 2016/09/01 15:51:56 by ale-batt         ###   ########.fr       *#
+#*   Updated: 2016/09/01 16:01:52 by ale-batt         ###   ########.fr       *#
 #*                                                                            *#
 #* ************************************************************************** *#
 
@@ -26,10 +26,13 @@ INCLUDES = -I$(LIBFT_DIR)/includes -I$(CMOCKA_DIR)/include
 
 .PHONY: all clean fclean re test
 	
-all:	$(CMOCKA_LIB) $(A_OUT) test
+all:	$(CMOCKA_LIB) $(LIBFT_DIR)/libft.a $(A_OUT) test
 
 %/a.out: %/test.c
 	$(CC) $(INCLUDES) -o $@ $^ $(LIBS)
+
+$(LIBFT_DIR)/libft.a:
+	make -C $(LIBFT_DIR)
 
 $(CMOCKA_BUILD):
 	@git submodule init
