@@ -6,7 +6,7 @@
 /*   By: ale-batt <ale-batt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/25 20:57:59 by ale-batt          #+#    #+#             */
-/*   Updated: 2016/08/31 16:25:09 by ale-batt         ###   ########.fr       */
+/*   Updated: 2016/09/02 14:21:20 by ale-batt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,19 +30,20 @@ void	ft_read_hash(t_hash *hash)
 	}
 }
 
-void	ft_free_hash(t_hash *hash)
+void	ft_free_hash(t_hash **hash)
 {
 	t_hash *tmp;
 
-	while (hash)
+	while (*hash)
 	{
-		tmp = hash;
-		free(hash->value);
-		free(hash->key);
-		hash = hash->next;
+		tmp = *hash;
+		free((*hash)->value);
+		free((*hash)->key);
+		(*hash) = (*hash)->next;
 		free(tmp);
 	}
-	free(hash);
+	free(*hash);
+	*hash = NULL;
 }
 
 int		ft_len_hash(t_hash *hash)

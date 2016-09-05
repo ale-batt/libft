@@ -17,7 +17,8 @@ SOURCES = ./sources
 OBJECT  = ./.objs
 
 TAGS = etags --declarations
-CFLAGS = -Wall -Werror -Wextra -ansi -pedantic
+CFLAGS = -Wall -Werror -Wextra 
+# -ansi -pedantic
 C = \033[1;34m
 
 # make [[OPT]] [[MODE]=1] ...]

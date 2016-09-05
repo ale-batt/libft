@@ -6,7 +6,7 @@
 /*   By: ale-batt <ale-batt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/25 20:57:52 by ale-batt          #+#    #+#             */
-/*   Updated: 2016/08/31 16:22:59 by ale-batt         ###   ########.fr       */
+/*   Updated: 2016/09/02 16:25:01 by ale-batt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,22 +40,25 @@ char	*ft_get_key_hash(t_hash *hash, char *value)
 	return (NULL);
 }
 
-void	ft_remove_key_hash(t_hash *hash, char *key)
+void	ft_remove_key_hash(t_hash **hash, char *key)
 {
 	t_hash	*tmp;
 	t_hash	*prev;
 
-	tmp = hash;
+	tmp = *hash;
 	prev = tmp;
 	while (tmp)
 	{
-		if (ft_strcmp(tmp->key, key) == 0)
+		if (ft_strequ(tmp->key, key))
 		{
 			prev->next = tmp->next;
+			if (tmp == prev)
+				*hash = tmp->next;
 			free(tmp->key);
 			free(tmp->value);
 			free(tmp);
-			tmp = prev;
+			tmp = prev->next;
+			continue ;
 		}
 		prev = tmp;
 		tmp = tmp->next;
