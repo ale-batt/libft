@@ -6,36 +6,53 @@
 /*   By: world42 <world42@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/30 01:03:09 by world42           #+#    #+#             */
-/*   Updated: 2014/04/27 03:34:44 by world42          ###   ########.fr       */
+/*   Updated: 2016/10/18 14:59:46 by ale-batt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static char		*ft_itoa_recurse(int n, int size, char *nbr)
+static unsigned int	ft_size_chaine(int n)
 {
+	int	size;
+
+	size = 0;
 	if (n < 0)
+		size = 1;
+	while (n / 10)
 	{
-		nbr[0] = '-';
-		return (ft_itoa_recurse(n * -1, size, nbr));
+		size++;
+		n = n / 10;
 	}
-	if (n >= 10 && size >= 0)
-	{
-		nbr[size] = (n % 10) + '0';
-		return (ft_itoa_recurse(n / 10, size - 1, nbr));
-	}
-	nbr[size] = n + '0';
-	return (nbr);
+	return ((unsigned int)size);
 }
 
-char			*ft_itoa(int n)
+char				*ft_itoa(int n)
 {
-	char	*nbr;
-	int		size;
+	char			*str;
+	unsigned int	size;
+	long			nb_l;
 
-	if (n <= -2147483648)
-		return (ft_strdup("-2147483648"));
-	size = ft_numlen(n);
-	nbr = ft_strnew(size);
-	return (ft_itoa_recurse(n, size - 1, nbr));
+	nb_l = n;
+	size = ft_size_chaine(n);
+	str = ft_strnew(size + 1);
+	ft_bzero(str, size + 1);
+	if (!str)
+		return (NULL);
+	if (nb_l == 0)
+	{
+		str[0] = 48;
+		return (str);
+	}
+	if (nb_l < 0)
+	{
+		str[0] = '-';
+		nb_l = -nb_l;
+	}
+	while ((nb_l % 10) > 0 || (nb_l / 10 != 0))
+	{
+		str[size--] = '0' + (nb_l % 10);
+		nb_l = nb_l / 10;
+	}
+	return (str);
 }
