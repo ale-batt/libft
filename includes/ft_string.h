@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   string.h                                           :+:      :+:    :+:   */
+/*   ft_string.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: world42 <world42@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/08/26 13:59:57 by world42           #+#    #+#             */
-/*   Updated: 2016/09/01 16:56:55 by ale-batt         ###   ########.fr       */
+/*   Updated: 2016/10/26 18:40:29 by ale-batt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef STRING_H
-# define STRING_H
+#ifndef FT_STRING_H
+# define FT_STRING_H
 
 char		*ft_strajax(char *str);
 char		*ft_strcat(char *s1, const char *s2);
