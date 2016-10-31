@@ -6,7 +6,7 @@
 /*   By: world42 <world42@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/02/11 19:16:35 by world42           #+#    #+#             */
-/*   Updated: 2016/08/26 14:43:57 by ale-batt         ###   ########.fr       */
+/*   Updated: 2016/10/26 18:41:55 by ale-batt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ int		ft_read(int const fd, char **buf, char **line)
 	return (ret < 0 ? -1 : ret > 0);
 }
 
-int				get_next_line(int const fd, char **line)
+int		get_next_line(int const fd, char **line)
 {
 	static char	*buf[2];
 
