@@ -6,13 +6,13 @@
 /*   By: ale-batt <ale-batt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/25 20:57:27 by ale-batt          #+#    #+#             */
-/*   Updated: 2016/08/31 16:22:51 by ale-batt         ###   ########.fr       */
+/*   Updated: 2016/10/31 15:30:30 by ale-batt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "hash.h"
 
-static t_hash	*ft_set_value(char *key, char *value)
+static t_hash	*ft_set_value(void *key, void *value)
 {
 	t_hash	*new;
 
@@ -23,7 +23,7 @@ static t_hash	*ft_set_value(char *key, char *value)
 	return (new);
 }
 
-void			ft_add_hash(t_hash **hash, char *key, char *value)
+void			ft_add_hash(t_hash **hash, void *key, void *value)
 {
 	t_hash	*new;
 	t_hash	*tmp;

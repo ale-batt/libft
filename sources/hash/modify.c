@@ -6,13 +6,13 @@
 /*   By: ale-batt <ale-batt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/08/27 18:53:00 by ale-batt          #+#    #+#             */
-/*   Updated: 2016/08/31 16:23:19 by ale-batt         ###   ########.fr       */
+/*   Updated: 2016/10/31 15:30:54 by ale-batt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "hash.h"
 
-void	ft_modify_value(t_hash *hash, char *key, char *newvalue)
+void	ft_modify_value(t_hash *hash, void *key, void *newvalue)
 {
 	t_hash	*tmp;
 

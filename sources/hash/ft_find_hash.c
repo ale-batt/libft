@@ -6,13 +6,13 @@
 /*   By: ale-batt <ale-batt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/25 20:57:52 by ale-batt          #+#    #+#             */
-/*   Updated: 2016/09/02 16:25:01 by ale-batt         ###   ########.fr       */
+/*   Updated: 2016/10/31 15:30:39 by ale-batt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "hash.h"
 
-char	*ft_get_value_hash(t_hash *hash, char *key)
+void	*ft_get_value_hash(t_hash *hash, void *key)
 {
 	t_hash	*tmp;
 
@@ -26,7 +26,7 @@ char	*ft_get_value_hash(t_hash *hash, char *key)
 	return (NULL);
 }
 
-char	*ft_get_key_hash(t_hash *hash, char *value)
+void	*ft_get_key_hash(t_hash *hash, void *value)
 {
 	t_hash	*tmp;
 
@@ -40,7 +40,7 @@ char	*ft_get_key_hash(t_hash *hash, char *value)
 	return (NULL);
 }
 
-void	ft_remove_key_hash(t_hash **hash, char *key)
+void	ft_remove_key_hash(t_hash **hash, void *key)
 {
 	t_hash	*tmp;
 	t_hash	*prev;
