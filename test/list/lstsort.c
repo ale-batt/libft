@@ -6,7 +6,7 @@
 /*   By: ale-batt <ale-batt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/02 16:22:56 by ale-batt          #+#    #+#             */
-/*   Updated: 2016/11/02 16:23:44 by ale-batt         ###   ########.fr       */
+/*   Updated: 2016/11/02 16:40:32 by ale-batt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,8 +66,23 @@ void	test_one_value_only(void **state)
 void	test_two_value(void **state)
 {
 	t_list *list;
+	int i_list_a[3] = {42, 43, 0};
+	int i_list_b[3] = {43, 42, 0};
 
-	list = create_list(arr_list_random(2));
+	list = create_list(i_list_a);
+	ft_lstsort(&list, ge_sort);
+	assert_true(is_sort(list));
+	
+	list = create_list(i_list_b);
+	ft_lstsort(&list, ge_sort);
+	assert_true(is_sort(list));
+}
+
+void	test_big_list(void **state)
+{
+	t_list *list;
+
+	list = create_list(arr_list_random(1000));
 	ft_lstsort(&list, ge_sort);
 	assert_true(is_sort(list));
 }
@@ -80,6 +95,7 @@ int		test_lstsort(void)
 		cmocka_unit_test(test_always_equal_values),
 		cmocka_unit_test(test_one_value_only),
 		cmocka_unit_test(test_two_value),
+		cmocka_unit_test(test_big_list),
 	};
 	return cmocka_run_group_tests(tests, NULL, NULL);
 }
