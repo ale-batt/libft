@@ -6,7 +6,7 @@
 #*   By: ale-batt <ale-batt@student.42.fr>          +#+  +:+       +#+        *#
 #*                                                +#+#+#+#+#+   +#+           *#
 #*   Created: 2016/09/01 12:23:36 by ale-batt          #+#    #+#             *#
-#*   Updated: 2016/09/01 16:01:52 by ale-batt         ###   ########.fr       *#
+#*   Updated: 2016/11/02 15:46:35 by ale-batt         ###   ########.fr       *#
 #*                                                                            *#
 #* ************************************************************************** *#
 
@@ -28,7 +28,8 @@ INCLUDES = -I$(LIBFT_DIR)/includes -I$(CMOCKA_DIR)/include
 	
 all:	$(CMOCKA_LIB) $(LIBFT_DIR)/libft.a $(A_OUT) test
 
-%/a.out: %/test.c
+#%/a.out: %/test.c
+%/a.out: %/*.c
 	$(CC) $(INCLUDES) -o $@ $^ $(LIBS)
 
 $(LIBFT_DIR)/libft.a:
