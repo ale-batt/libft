@@ -6,7 +6,7 @@
 /*   By: ale-batt <ale-batt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/25 20:57:27 by ale-batt          #+#    #+#             */
-/*   Updated: 2016/10/31 15:30:30 by ale-batt         ###   ########.fr       */
+/*   Updated: 2016/10/31 15:53:34 by ale-batt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@ static t_hash	*ft_set_value(void *key, void *value)
 	t_hash	*new;
 
 	new = (t_hash *)malloc(sizeof(t_hash));
-	new->key = ft_strdup(key);
-	new->value = ft_strdup(value);
+	new->key = key;
+	new->value = value;
 	new->next = NULL;
 	return (new);
 }

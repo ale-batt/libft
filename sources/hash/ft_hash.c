@@ -6,7 +6,7 @@
 /*   By: ale-batt <ale-batt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/25 20:57:59 by ale-batt          #+#    #+#             */
-/*   Updated: 2016/09/02 14:21:20 by ale-batt         ###   ########.fr       */
+/*   Updated: 2016/11/02 15:08:26 by ale-batt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,8 +37,8 @@ void	ft_free_hash(t_hash **hash)
 	while (*hash)
 	{
 		tmp = *hash;
-		free((*hash)->value);
-		free((*hash)->key);
+		/*free((*hash)->value);*/
+		/*free((*hash)->key);*/
 		(*hash) = (*hash)->next;
 		free(tmp);
 	}

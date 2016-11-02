@@ -6,7 +6,7 @@
 /*   By: ale-batt <ale-batt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/25 20:57:52 by ale-batt          #+#    #+#             */
-/*   Updated: 2016/10/31 15:30:39 by ale-batt         ###   ########.fr       */
+/*   Updated: 2016/11/02 15:10:48 by ale-batt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,8 +54,6 @@ void	ft_remove_key_hash(t_hash **hash, void *key)
 			prev->next = tmp->next;
 			if (tmp == prev)
 				*hash = tmp->next;
-			free(tmp->key);
-			free(tmp->value);
 			free(tmp);
 			tmp = prev->next;
 			continue ;
