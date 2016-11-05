@@ -6,7 +6,7 @@
 /*   By: world42 <world42@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/08/26 13:58:37 by world42           #+#    #+#             */
-/*   Updated: 2016/11/01 15:04:29 by ale-batt         ###   ########.fr       */
+/*   Updated: 2016/11/05 22:16:44 by ale-batt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ t_list				*ft_lstinsert(t_list **l, t_list *n,
 void				ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 t_list				*ft_lstnew(void const *content, size_t content_size);
-int					ft_lstsize(t_list *lst);
+size_t				ft_lstlen(t_list *lst);
 void				ft_lstsort(t_list **list, int (*cmp)(void *, void *));
 
 #endif
