@@ -34,4 +34,3 @@ char		*ft_tohexa(unsigned long n)
 	}
 	return (ret);
 }
-

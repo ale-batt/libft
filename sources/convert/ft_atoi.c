@@ -12,32 +12,31 @@
 
 #include "libft.h"
 
-static int		ft_nlen(const char *s)
+int	ft_atoi(const char *str)
 {
-	if (*s && (*s >= 48 && *s <= 57))
-		return (ft_nlen(s + 1) + 1);
-	return (0);
-}
+	unsigned int	result;
+	int				neg;
+	int				i;
 
-static int		ft_atoi_deux(const char *str)
-{
-	int			a;
-
-	if (*str && (*str >= 48 && *str <= 57))
+	i = 0;
+	neg = 1;
+	result = 0;
+	if (!str)
+		return (0);
+	while (str[i] == ' ' || str[i] == '\t' || str[i] == '\n' || str[i] == '\v'
+			|| str[i] == '\r' || str[i] == '\f')
+		i++;
+	if (str[i] == '-')
 	{
-		a = (*str - 48) * ft_pow(10, ft_nlen(str) - 1);
-		return (ft_atoi_deux(str + 1) + a);
+		neg = -1;
+		i++;
 	}
-	return (0);
-}
-
-int				ft_atoi(const char *str)
-{
-	while (ft_isspace(*str))
-		str++;
-	if (*str == '-')
-		return (-1 * ft_atoi_deux(str + 1));
-	if (*str == '+')
-		return (ft_atoi_deux(str + 1));
-	return (ft_atoi_deux(str));
+	else if (str[i] == '+')
+		i++;
+	while (str[i] >= '0' && str[i] <= '9')
+	{
+		result = result * 10 + (str[i] - '0');
+		i++;
+	}
+	return (result * neg);
 }
