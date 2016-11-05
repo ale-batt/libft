@@ -6,7 +6,7 @@
 /*   By: world42 <world42@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/08/26 13:59:30 by world42           #+#    #+#             */
-/*   Updated: 2016/10/26 18:40:55 by ale-batt         ###   ########.fr       */
+/*   Updated: 2016/11/05 22:32:11 by ale-batt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,5 +45,6 @@ void	ft_putendl_color(char *str, char *color);
 void	ft_putstr_fd(const char *s, int fd);
 void	ft_putstr(const char *s);
 void	ft_putnull(char *s);
+void	ft_multiputs(char *str, ...);
 
 #endif
