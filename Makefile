@@ -6,7 +6,7 @@
 #    By: world42 <world42@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2013/11/19 13:57:53 by world42           #+#    #+#              #
-#*   Updated: 2016/11/05 23:32:26 by ale-batt         ###   ########.fr       *#
+#*   Updated: 2016/11/07 13:41:38 by ale-batt         ###   ########.fr       *#
 #                                                                              #
 # **************************************************************************** #
 
@@ -113,4 +113,4 @@ tag:
 	@echo "$(SKIP)$(U)$(C)[TAGING:\033[1;32m DONE$(C)]\033[0m"
 
 norme:
-	norminette $(C_FILES) $(H_FILES)
+	@norminette $(C_FILES) $(H_FILES)
