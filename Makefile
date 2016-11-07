@@ -6,7 +6,7 @@
 #    By: world42 <world42@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2013/11/19 13:57:53 by world42           #+#    #+#              #
-#*   Updated: 2016/08/25 14:17:14 by world42          ###   ########.fr       *#
+#*   Updated: 2016/11/05 23:32:26 by ale-batt         ###   ########.fr       *#
 #                                                                              #
 # **************************************************************************** #
 
@@ -81,7 +81,7 @@ all: $(O_DIRS) $(NORC) $(NAME) $(STAT) $(TAG)
 $(O_DIRS):
 	@mkdir -p  $(OBJECT) $(O_DIRS)
 
-$(NAME): $(O_FILES) # $(H_FILES)
+$(NAME): $(O_FILES) $(H_FILES)
 	@echo "$(U)$(C)[COMPILE:\033[1;32m DONE$(C)]"
 	@echo "$(U)$(C)[BUILD LIB]\033[0;32m"
 	$(LIB) $(NAME) $(O_FILES)
