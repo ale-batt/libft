@@ -6,7 +6,7 @@
 /*   By: world42 <world42@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/08/26 13:59:57 by world42           #+#    #+#             */
-/*   Updated: 2016/10/26 18:40:29 by ale-batt         ###   ########.fr       */
+/*   Updated: 2016/12/07 18:56:48 by ale-batt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,9 @@ void		ft_striter(char *s, void (*f)(char*));
 void		ft_striteri(char *s, void (*f)(unsigned int, char*));
 char		*ft_strjoin_char(const char *s1, char c, const char *s2);
 char		*ft_strjoin(const char *s1, const char *s2);
+char		*ft_strfjoin(const char *s1, const char *s2);
+char		*ft_strfljoin(const char *s1, const char *s2);
+char		*ft_strfrjoin(const char *s1, const char *s2);
 size_t		ft_strlcat(char *dst, const char *src, size_t size);
 size_t		ft_strlen(const char *s);
 char		*ft_strmap(const char *s, char (*f)(char));
