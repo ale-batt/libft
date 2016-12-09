@@ -6,7 +6,7 @@
 /*   By: world42 <world42@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/08/26 13:59:30 by world42           #+#    #+#             */
-/*   Updated: 2016/12/09 12:34:58 by ale-batt         ###   ########.fr       */
+/*   Updated: 2016/12/09 18:23:15 by ale-batt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,14 @@
 # define PURPLE    "\033[35m"
 # define CYAN      "\033[36m"
 # define WHITE     "\033[37m"
+
+# define TIME_YMD "%Y-%m-%d"
+# define TIME_HMS "%H:%M:%S"
+# define TIME_MS "%M:%S"
+# define TIME_HM "%H:%M"
+# define TIME_MDHMS "%m-%d %H:%M:%S"
+# define TIME_MD "%m-%d"
+# define TIME_YMDHMS "%Y-%m-%d %H:%M:%S"
 
 void	ft_putbase(long l, int base, char *letters);
 void	ft_putchar_fd(char c, int fd);

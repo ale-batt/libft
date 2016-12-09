@@ -1,31 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_multiputs.c                                     :+:      :+:    :+:   */
+/*   flags.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ale-batt <ale-batt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/05 22:28:21 by ale-batt          #+#    #+#             */
-/*   Updated: 2016/12/09 15:30:33 by ale-batt         ###   ########.fr       */
+/*   Created: 2016/12/09 17:41:32 by ale-batt          #+#    #+#             */
+/*   Updated: 2016/12/09 18:30:22 by ale-batt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-#include <stdarg.h>
+#include "ft_log.h"
+#include <time.h>
 
-void	ft_multiputs(char *str, ...)
+void	log_printflags(t_log *log)
 {
-	va_list	ap;
-	char	*tmp;
-
-	va_start(ap, str);
-	ft_putstr(str);
-	while (42)
+	if (log->flag_time == 1)
 	{
-		tmp = va_arg(ap, char *);
-		if (!tmp)
-			break ;
-		ft_putstr(tmp);
-	}
-	va_end(ap);
+		ft_putstr_fd(localtime(time(NULL))->tm_hour, log->fd);
+		ft_putstr_fd("  ", log->fd);
+	}	
+}
+
+void	log_setflag(int flag)
+{
+	t_log	*log;
+
+	log = log_singleton(NULL);
+	if (flag == FLAG_TIME)
+		log->flag_time = 1;
 }
