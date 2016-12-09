@@ -6,7 +6,7 @@
 /*   By: ale-batt <ale-batt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/05 22:28:21 by ale-batt          #+#    #+#             */
-/*   Updated: 2016/11/05 22:33:08 by ale-batt         ###   ########.fr       */
+/*   Updated: 2016/12/08 13:27:42 by ale-batt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ void	ft_multiputs(char *str, ...)
 	char	*tmp;
 
 	va_start(ap, str);
+	ft_putstr(str);
 	while (42)
 	{
 		tmp = va_arg(ap, char *);
