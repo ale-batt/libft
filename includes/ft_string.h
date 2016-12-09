@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: world42 <world42@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/08/26 13:59:57 by world42           #+#    #+#             */
-/*   Updated: 2016/12/07 18:59:35 by ale-batt         ###   ########.fr       */
+/*   Created: 2016/08/26 13:58:37 by world42           #+#    #+#             */
+/*   Updated: 2016/12/09 12:40:50 by ale-batt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,15 +21,16 @@ int			ft_strcmp(const char *s1, const char *s2);
 char		*ft_strcpy(char *s1, const char *s2);
 void		ft_strdel(char **as);
 char		*ft_strdup(const char *s1);
+char		*ft_strfdup(char *s1);
 int			ft_strequ(const char *s1, const char *s2);
 char		*ft_strgetnext(char ***str);
 void		ft_striter(char *s, void (*f)(char*));
 void		ft_striteri(char *s, void (*f)(unsigned int, char*));
 char		*ft_strjoin_char(const char *s1, char c, const char *s2);
 char		*ft_strjoin(const char *s1, const char *s2);
-char		*ft_strfjoin( char *s1,  char *s2);
-char		*ft_strfljoin( char *s1,  char *s2);
-char		*ft_strfrjoin( char *s1,  char *s2);
+char		*ft_strfjoin(char *s1, char *s2);
+char		*ft_strfljoin(char *s1, char *s2);
+char		*ft_strfrjoin(char *s1, char *s2);
 size_t		ft_strlcat(char *dst, const char *src, size_t size);
 size_t		ft_strlen(const char *s);
 char		*ft_strmap(const char *s, char (*f)(char));

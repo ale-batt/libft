@@ -6,7 +6,7 @@
 /*   By: world42 <world42@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/30 03:00:04 by world42           #+#    #+#             */
-/*   Updated: 2016/12/07 18:58:55 by ale-batt         ###   ########.fr       */
+/*   Updated: 2016/12/09 12:36:18 by ale-batt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ char		*ft_strjoin(const char *s1, const char *s2)
 	return (dst);
 }
 
-char	*ft_strfjoin(char *s1, char *s2)
+char		*ft_strfjoin(char *s1, char *s2)
 {
 	char	*str;
 
@@ -36,7 +36,7 @@ char	*ft_strfjoin(char *s1, char *s2)
 	return (str);
 }
 
-char	*ft_strfljoin(char *s1, char *s2)
+char		*ft_strfljoin(char *s1, char *s2)
 {
 	char	*str;
 
@@ -45,7 +45,7 @@ char	*ft_strfljoin(char *s1, char *s2)
 	return (str);
 }
 
-char	*ft_strfrjoin(char *s1, char *s2)
+char		*ft_strfrjoin(char *s1, char *s2)
 {
 	char	*str;
 
