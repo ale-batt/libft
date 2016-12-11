@@ -6,12 +6,14 @@
 /*   By: world42 <world42@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/08/26 13:59:30 by world42           #+#    #+#             */
-/*   Updated: 2016/12/09 18:23:15 by ale-batt         ###   ########.fr       */
+/*   Updated: 2016/12/12 00:07:43 by ale-batt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUTS_H
 # define PUTS_H
+
+#include "libft.h"
 
 # define DEFAULT   "\033[0m"
 # define HIGHLIGHT "\033[1m"
@@ -54,6 +56,12 @@ void	ft_putendl_color(char *str, char *color);
 void	ft_putstr_fd(const char *s, int fd);
 void	ft_putstr(const char *s);
 void	ft_putnull(char *s);
+
+void	ft_multiputs_args(int fd, char *str, va_list ap);
 void	ft_multiputs(char *str, ...);
+void	ft_multiputs_fd(int fd, char *str, ...);
+
+void	ft_printtime(char *format);
+void	ft_printtime_fd(char *format, int fd);
 
 #endif
