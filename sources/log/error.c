@@ -1,39 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   print.c                                            :+:      :+:    :+:   */
+/*   error.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ale-batt <ale-batt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/12/09 14:52:05 by ale-batt          #+#    #+#             */
-/*   Updated: 2016/12/12 00:08:49 by ale-batt         ###   ########.fr       */
+/*   Created: 2016/12/11 23:22:40 by ale-batt          #+#    #+#             */
+/*   Updated: 2016/12/12 00:09:12 by ale-batt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_log.h"
 #include <stdarg.h>
 
-void	log_print(char *str, ...)
+void	log_error(char *str, ...)
 {
-	t_log	*log;
 	va_list	ap;
+	t_log	*log;
 
 	log = log_singleton(NULL);
 	if (log->fd == -1)
-		return ;
+		exit(-1);
 	va_start(ap, str);
+	ft_putstr_fd(RED, log->fd);
 	ft_multiputs_args(log->fd, str, ap);
-}
-
-void	log_println(char *str, ...)
-{
-	t_log	*log;
-	va_list	ap;
-
-	log = log_singleton(NULL);
-	if (log->fd == -1)
-		return ;
-	va_start(ap, str);
-	ft_multiputs_args(log->fd, str, ap);
-	ft_putchar_fd('\n', log->fd);
+	ft_putendl_fd(DEFAULT, log->fd);
 }

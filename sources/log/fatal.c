@@ -6,7 +6,7 @@
 /*   By: ale-batt <ale-batt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/09 15:34:01 by ale-batt          #+#    #+#             */
-/*   Updated: 2016/12/09 18:13:57 by ale-batt         ###   ########.fr       */
+/*   Updated: 2016/12/12 00:13:31 by ale-batt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,23 +16,15 @@
 void	log_fatal(char *str, ...)
 {
 	va_list	ap;
-	char	*tmp;
 	t_log	*log;
 
+	ft_putendl("Log Fatal error. Check logs for details");
 	log = log_singleton(NULL);
 	if (log->fd == -1)
 		exit(-1);
 	va_start(ap, str);
 	ft_putstr_fd(RED, log->fd);
-	ft_putstr_fd(str, log->fd);
-	while (42)
-	{
-		tmp = va_arg(ap, char *);
-		if (!tmp)
-			break ;
-		ft_putstr_fd(tmp, log->fd);
-	}
-	ft_putstr_fd(DEFAULT, log->fd);
-	va_end(ap);
+	ft_multiputs_args(log->fd, str, ap);
+	ft_putendl_fd(DEFAULT, log->fd);
 	exit(-1);
 }
