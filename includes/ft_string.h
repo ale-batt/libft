@@ -6,7 +6,7 @@
 /*   By: world42 <world42@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/08/26 13:58:37 by world42           #+#    #+#             */
-/*   Updated: 2016/12/09 12:40:50 by ale-batt         ###   ########.fr       */
+/*   Updated: 2016/12/13 11:48:46 by ale-batt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,5 +49,6 @@ char		*ft_strsub(const char *s, unsigned int start, size_t len);
 char		*ft_strtrim(const char *s);
 char		*ft_substr(const char *src, size_t pos, size_t n);
 char		*ft_ultijoin(char *str, ...);
+int			ft_strempty(char *str);
 
 #endif

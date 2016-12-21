@@ -6,7 +6,7 @@
 #    By: world42 <world42@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2013/11/19 13:57:53 by world42           #+#    #+#              #
-#*   Updated: 2016/11/07 13:41:38 by ale-batt         ###   ########.fr       *#
+#*   Updated: 2016/12/16 18:33:02 by ale-batt         ###   ########.fr       *#
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,7 @@ SOURCES = ./sources
 OBJECT  = ./.objs
 
 TAGS = etags --declarations
-CFLAGS = -Wall -Werror -Wextra 
+CFLAGS = -g -Wall -Werror -Wextra 
 # -ansi -pedantic
 C = \033[1;34m
 

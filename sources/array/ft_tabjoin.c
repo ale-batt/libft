@@ -6,7 +6,7 @@
 /*   By: world42 <world42@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/01/25 00:22:50 by world42           #+#    #+#             */
-/*   Updated: 2014/01/25 00:28:07 by world42          ###   ########.fr       */
+/*   Updated: 2016/12/21 13:57:24 by ale-batt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,19 +16,15 @@
 char		*ft_tabjoin(char **tab)
 {
 	char	*str;
-	char	*tmp;
 
+	str = NULL;
 	if (tab)
 	{
-		str = ft_strnew(2);
 		while (*tab)
 		{
-			tmp = str;
-			str = ft_strjoin(str, *tab);
-			free(tmp);
+			str = (str) ? ft_strfljoin(str, *tab) : ft_strdup(*tab);
 			++tab;
 		}
-		return (str);
 	}
-	return (NULL);
+	return (str);
 }

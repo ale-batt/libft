@@ -1,27 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcpy.c                                        :+:      :+:    :+:   */
+/*   ft_puterror.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: world42 <world42@student.42.fr>            +#+  +:+       +#+        */
+/*   By: ale-batt <ale-batt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2013/11/20 18:45:09 by world42           #+#    #+#             */
-/*   Updated: 2016/12/16 16:49:51 by ale-batt         ###   ########.fr       */
+/*   Created: 2016/12/21 17:06:07 by ale-batt          #+#    #+#             */
+/*   Updated: 2016/12/21 17:07:22 by ale-batt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strcpy(char *dest, const char *src)
+void	ft_puterror(char *str)
 {
-	size_t	i;
-
-	i = 0;
-	while (src[i])
-	{
-		dest[i] = src[i];
-		i++;
-	}
-	dest[i] = '\0';
-	return (dest);
+	ft_putendl_color(str, RED);
+	exit(-1);
 }
