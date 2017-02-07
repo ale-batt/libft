@@ -1,25 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_strpreci.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: world42 <world42@student.42.fr>            +#+  +:+       +#+        */
+/*   By: ale-batt <ale-batt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2013/11/30 18:59:03 by world42           #+#    #+#             */
-/*   Updated: 2017/02/02 17:18:04 by ale-batt         ###   ########.fr       */
+/*   Created: 2017/01/03 14:50:44 by ale-batt          #+#    #+#             */
+/*   Updated: 2017/01/03 15:03:14 by ale-batt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putstr_fd(const char *s, int fd)
+char	*ft_strpreci(char *str, char c, int preci)
 {
 	char	*tmp;
+	int		len;
 
-	tmp = (char *)s;
-	while (tmp)
-	{
-		ft_putchar_fd(*tmp, fd);
-		tmp++;
-	}
+	len = ft_strlen(str);
+	if (len >= preci)
+		return (str);
+	tmp = ft_strdup(str);
+	ft_memset(str, c, preci);
+	ft_strncpy(str + (preci - len), tmp, len);
+	free(tmp);
+	return (str);
 }

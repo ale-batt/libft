@@ -6,7 +6,7 @@
 /*   By: world42 <world42@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/08/26 13:59:20 by world42           #+#    #+#             */
-/*   Updated: 2016/08/26 14:37:37 by ale-batt         ###   ########.fr       */
+/*   Updated: 2017/01/03 14:14:02 by ale-batt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,6 @@
 # define NUMBERS_H
 
 int		ft_numlen(int n);
+int		ft_intlen(int n);
 
 #endif

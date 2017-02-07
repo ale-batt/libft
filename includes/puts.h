@@ -6,7 +6,7 @@
 /*   By: world42 <world42@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/08/26 13:59:30 by world42           #+#    #+#             */
-/*   Updated: 2016/12/13 16:36:50 by ale-batt         ###   ########.fr       */
+/*   Updated: 2017/02/06 15:13:02 by ale-batt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,10 +57,9 @@ void	ft_putstr_fd(const char *s, int fd);
 void	ft_putstr(const char *s);
 void	ft_putnull(char *s);
 
-void	ft_multiputs_args(int fd, char *str, va_list ap);
+void	ft_multiputs_args(int fd, char *str, va_list *ap);
 void	ft_multiputs(char *str, ...);
 void	ft_multiputs_fd(int fd, char *str, ...);
-void	ft_fmultiputs(FILE *f, char *str, va_list ap);
 
 void	ft_printtime(char *format);
 void	ft_printtime_fd(char *format, int fd);

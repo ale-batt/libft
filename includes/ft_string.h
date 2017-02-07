@@ -6,12 +6,14 @@
 /*   By: world42 <world42@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/08/26 13:58:37 by world42           #+#    #+#             */
-/*   Updated: 2016/12/13 11:48:46 by ale-batt         ###   ########.fr       */
+/*   Updated: 2017/01/03 16:09:26 by ale-batt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_STRING_H
 # define FT_STRING_H
+
+# define STRINGIFY(x) #x
 
 char		*ft_strajax(char *str);
 char		*ft_strcat(char *s1, const char *s2);
@@ -50,5 +52,6 @@ char		*ft_strtrim(const char *s);
 char		*ft_substr(const char *src, size_t pos, size_t n);
 char		*ft_ultijoin(char *str, ...);
 int			ft_strempty(char *str);
+char		*ft_strpreci(char *str, char c, int preci);
 
 #endif
