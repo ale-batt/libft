@@ -6,7 +6,7 @@
 /*   By: ale-batt <ale-batt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/07 16:45:40 by ale-batt          #+#    #+#             */
-/*   Updated: 2017/02/07 16:49:35 by ale-batt         ###   ########.fr       */
+/*   Updated: 2017/02/20 16:33:54 by ale-batt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ char	**ft_tabcpy(char **src)
 	int		len;
 	int		i;
 
-	if (!src || !src[0]) 
+	if (!src || !src[0])
 		return (NULL);
 	len = ft_tablen(src);
 	new = (char **)malloc((sizeof(char *) * len) + 1);
