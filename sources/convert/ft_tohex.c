@@ -6,7 +6,7 @@
 /*   By: ale-batt <ale-batt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/31 18:22:09 by ale-batt          #+#    #+#             */
-/*   Updated: 2016/11/07 13:40:48 by ale-batt         ###   ########.fr       */
+/*   Updated: 2017/02/20 13:17:11 by ale-batt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,5 +32,7 @@ char		*ft_tohexa(unsigned long n)
 		ret[size--] = HEX[n % 16];
 		n = n / 16;
 	}
+	if (ft_strequ(ret, ""))
+		ft_strcpy(ret, "0");
 	return (ret);
 }

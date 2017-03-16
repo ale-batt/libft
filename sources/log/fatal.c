@@ -6,7 +6,7 @@
 /*   By: ale-batt <ale-batt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/09 15:34:01 by ale-batt          #+#    #+#             */
-/*   Updated: 2017/02/06 15:12:26 by ale-batt         ###   ########.fr       */
+/*   Updated: 2017/02/20 16:34:18 by ale-batt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	log_fatal(char *str, ...)
 
 	log = log_singleton(NULL);
 	if (log->fd != 1)
-		ft_putendl_color("Log Fatal error. Check logs for details, Exiting...", RED);
+		ft_putendl_color("Log Fatal error. Check logs for details", RED);
 	if (log->fd == -1)
 		exit(-1);
 	va_start(ap, str);
