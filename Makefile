@@ -6,17 +6,21 @@
 #    By: world42 <world42@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2013/11/19 13:57:53 by world42           #+#    #+#              #
-#*   Updated: 2017/01/24 13:06:11 by ale-batt         ###   ########.fr       *#
+#*   Updated: 2017/03/16 22:06:36 by ale-batt         ###   ########.fr       *#
 #                                                                              #
 # **************************************************************************** #
 
 NNAME = ft
 
+ifeq ($(CC),)
+	CC := (shell which gcc)
+endif
+
 INCLUDE = ./includes
 SOURCES = ./sources
 OBJECT  = ./.objs
 
-TAGS = etags --declarations
+TAGS   = etags --declarations
 CFLAGS = -Wall -Werror -Wextra 
 # -ansi -pedantic
 C = \033[1;34m
@@ -50,7 +54,6 @@ DEBUG = $(DEBUG_$(G))
 SILENCE = $(SILENCE_$(V))
 NAME = lib$(NNAME).a
 CLNAME = l$(NNAME)
-CC = $(SILENCE)gcc
 LIB = $(SILENCE)ar rc
 RM = $(SILENCE)rm -rf
 
@@ -91,7 +94,7 @@ $(NAME): $(O_FILES) $(H_FILES)
 $(OBJECT)/%.o: $(SOURCES)/%.c
 	@echo "$(U)$(C)[COMPILE: \033[1;31m$<\033[A\033[0m"
 	@echo "\033[0;32m"
-	$(CC) $(DEBUG) $(CFLAGS) -o $@ -c $< -I$(INCLUDE) 
+	$(SILENCE) $(CC) $(DEBUG) $(CFLAGS) -o $@ -c $< -I$(INCLUDE) 
 	@printf "\033[1;31m[%-100s] %s%%\n" $(BAR) `echo $W|wc -w|tr -d ' '`
 	@echo "$(SKIP)\033[A\033[2K$(SKIP)"
 
