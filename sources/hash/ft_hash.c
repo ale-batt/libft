@@ -6,11 +6,11 @@
 /*   By: ale-batt <ale-batt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/25 20:57:59 by ale-batt          #+#    #+#             */
-/*   Updated: 2016/11/07 13:41:28 by ale-batt         ###   ########.fr       */
+/*   Updated: 2017/08/08 12:22:58 by ale-batt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "hash.h"
+#include "ft_hash.h"
 
 void	ft_read_hash(t_hash *hash)
 {

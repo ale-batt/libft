@@ -1,21 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   convert.h                                          :+:      :+:    :+:   */
+/*   ft_llist.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: world42 <world42@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/08/26 13:58:54 by world42           #+#    #+#             */
-/*   Updated: 2016/10/31 18:48:09 by ale-batt         ###   ########.fr       */
+/*   Created: 2016/08/26 13:58:37 by world42           #+#    #+#             */
+/*   Updated: 2017/08/08 12:12:30 by ale-batt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CONVERT_H
-# define CONVERT_H
+#ifndef FT_LLIST_H
+# define FT_LLIST_H
 
-int			ft_atoi(const char *str);
-float		ft_atof(const char *str);
-char		*ft_itoa(int n);
-char		*ft_tohexa(unsigned long n);
+typedef struct		s_llist
+{
+	void			*content;
+	struct s_llist	*next;
+	struct s_llist	*prev;
+}					t_llist;
+
+t_llist				*ft_llstnew(void const *content);
+void				ft_llstadd(t_llist **alst, t_llist *new);
+void				ft_llstadd_end(t_llist **alst, t_llist *new);
+int					ft_llstlen(t_llist *lst);
+t_llist				*ft_llstcpy(t_llist *list);
+void				ft_llstfree(t_llist *lst);
 
 #endif

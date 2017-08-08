@@ -1,22 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   match.h                                            :+:      :+:    :+:   */
+/*   ft_maths.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: world42 <world42@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/08/26 13:58:54 by world42           #+#    #+#             */
-/*   Updated: 2016/10/26 18:39:10 by ale-batt         ###   ########.fr       */
+/*   Updated: 2017/08/08 12:12:02 by ale-batt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MATCH_H
-# define MATCH_H
+#ifndef FT_MATHS_H
+# define FT_MATHS_H
 
-int			ft_match(const char *str, const char *match);
-size_t		ft_matchlen(const char *str, const char *match);
-int			ft_matchn(const char *str, const char *match);
-char		**ft_matchsplit(const char *str, const char *match);
-char		**ft_matchpop(char *str, const char *match);
+# define HEX 		"0123456789abcdef"
+# define OCT 		"012345678"
+# define EPSILON 	0.000001
+
+double		ft_pow(double x, double y);
+int			ft_abs(int i);
+double		ft_absl(double i);
+double		ft_sqrt(double x);
 
 #endif

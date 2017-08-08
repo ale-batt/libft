@@ -6,11 +6,11 @@
 /*   By: ale-batt <ale-batt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/08/27 19:29:11 by ale-batt          #+#    #+#             */
-/*   Updated: 2016/08/31 16:23:14 by ale-batt         ###   ########.fr       */
+/*   Updated: 2017/08/08 12:23:14 by ale-batt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "hash.h"
+#include "ft_hash.h"
 
 static void		ft_inverse(t_hash **a, t_hash **b)
 {

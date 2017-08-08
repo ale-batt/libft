@@ -6,11 +6,11 @@
 /*   By: ale-batt <ale-batt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/09 18:17:17 by ale-batt          #+#    #+#             */
-/*   Updated: 2016/12/11 19:21:35 by ale-batt         ###   ########.fr       */
+/*   Updated: 2017/08/08 12:23:41 by ale-batt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "puts.h"
+#include "ft_puts.h"
 #include <time.h>
 
 static char		*ft_gettime(char *format)

@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   numbers.h                                          :+:      :+:    :+:   */
+/*   ft_numbers.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: world42 <world42@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/08/26 13:59:20 by world42           #+#    #+#             */
-/*   Updated: 2017/01/03 14:14:02 by ale-batt         ###   ########.fr       */
+/*   Updated: 2017/08/08 12:11:25 by ale-batt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef NUMBERS_H
-# define NUMBERS_H
+#ifndef FT_NUMBERS_H
+# define FT_NUMBERS_H
 
 int		ft_numlen(int n);
 int		ft_intlen(int n);

@@ -6,7 +6,7 @@
 /*   By: world42 <world42@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/12/29 22:42:32 by world42           #+#    #+#             */
-/*   Updated: 2017/03/23 15:03:59 by ale-batt         ###   ########.fr       */
+/*   Updated: 2017/08/08 12:16:29 by ale-batt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,20 +19,21 @@
 # include <stdio.h>
 # include <stdint.h>
 
-# include "array.h"
-# include "convert.h"
-# include "ctype.h"
+# include "ft_array.h"
+# include "ft_convert.h"
+# include "ft_ctype.h"
 # include "get_next_line.h"
-# include "hash.h"
-# include "list.h"
-# include "llist.h"
-# include "match.h"
-# include "maths.h"
-# include "memory.h"
-# include "numbers.h"
-# include "puts.h"
-# include "rand.h"
+# include "ft_hash.h"
+# include "ft_list.h"
+# include "ft_llist.h"
+# include "ft_match.h"
+# include "ft_maths.h"
+# include "ft_memory.h"
+# include "ft_numbers.h"
+# include "ft_puts.h"
+# include "ft_rand.h"
 # include "ft_string.h"
-# include "debug.h"
+# include "ft_debug.h"
+# include "ft_vector.h"
 
 #endif
